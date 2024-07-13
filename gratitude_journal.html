@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Journal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #001f3f; /* Navy blue background */
+            color: #ffffff; /* White text color */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #001f3f; /* Navy blue background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff; /* White text color */
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ffffff; /* White text color */
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ffffff; /* White border */
+            border-radius: 4px;
+            resize: vertical;
+            color: #001f3f; /* Navy blue text color */
+            background-color: #ffffff; /* White background */
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffffff; /* White background */
+            color: #001f3f; /* Navy blue text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #003366; /* Darker navy blue on hover */
+        }
+
+        .animation {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            clip-path: inset(-100vh 0);
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+
+        .animation:before {
+            content: "";
+            display: block;
+            width: 400%;
+            height: 100%;
+            background:
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 12.5% 65%/12px 9px,
+              linear-gradient(#996b52 0 0) 9% 80%/9.4% 9%,
+              linear-gradient(#996b52 0 0) 10% 100%/7% 25%,
+              linear-gradient(#639510 0 0) 12.5% 100%/5px 36%,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 35.5% 50%/15px 10px,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 38% 64%/15px 10px,
+              linear-gradient(#996b52 0 0) 35.5% 80%/9.4% 9%,
+              linear-gradient(#996b52 0 0) 36% 100%/7% 25%,
+              linear-gradient(#639510 0 0) 37% 100%/5px 52%,
+              radial-gradient(farthest-side, #fb3e4c 98%, #ffffff) 64.5% 40.5%/10px 9px,
+              radial-gradient(farthest-side at bottom, #ffffff calc(100% - 5px), #639510 0 100%, #ffffff) 63.6% 34%/20px 10px,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 61% 50%/15px 10px,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 63.5% 64%/15px 10px,
+              linear-gradient(#996b52 0 0) 63.5% 80%/9.4% 9%,
+              linear-gradient(#996b52 0 0) 63.1% 100%/7% 25%,
+              linear-gradient(#639510 0 0) 62% 100%/5px 62%,
+              radial-gradient(farthest-side at 50% 4px, #fb3e4c 98%, #ffffff) 88.1% 17.5%/17px 13px,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 87% 50%/15px 10px,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 89.5% 38%/15px 10px,
+              radial-gradient(farthest-side, #639510 97%, #ffffff) 89.5% 64%/15px 10px,
+              linear-gradient(#996b52 0 0) 91% 80%/9.4% 9%,
+              linear-gradient(#996b52 0 0) 90% 100%/7% 25%,
+              linear-gradient(#639510 0 0) 87.5% 100%/5px 77%;
+            background-repeat: no-repeat;
+            animation: m 4s 0.5s both;
+        }
+
+        @keyframes m {
+            0%, 20% {
+                transform: translate(0%)
+            }
+            33.33%, 53.33% {
+                transform: translate(-24%)
+            }
+            66.66%, 86.66% {
+                transform: translate(-49.5%)
+            }
+            100% {
+                transform: translate(-74.5%)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Gratitude Journal</h1>
+        <form method="POST">
+            <label for="entry">What are you grateful for today?</label><br>
+            <textarea id="entry" name="entry" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="animation"></div>
+        <h2>Previous Entries</h2>
+        <ul>
+            <!-- Example entries (replace with actual entries from backend) -->
+            <li>2024-07-13: Today I'm grateful for...</li>
+            <li>2024-07-12: I appreciated...</li>
+            <li>2024-07-11: Grateful for...</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+mental_health_app/
+│
+├── app.py
+├── templates/
+│   ├── index.html
+│   ├── mood_tracker.html
+│   ├── gratitude_journal.html
+├── static/
+│   ├── css/
+│   │   └── style.css
+└── data/
+    └── moods.json

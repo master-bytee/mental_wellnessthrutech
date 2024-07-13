@@ -1,0 +1,268 @@
+/* Import Google Fonts */
+@import url('https://fonts.google.com/share?selection.family=Cute+Font');
+
+/* Global Reset and Body Styles */
+body {
+    font-family: 'Cute Font', sans-serif;
+    background-color: #354b5e; /* Light blue background */
+    color: #fff; /* White text color */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem; /* Large heading size */
+    color: #87c0a8; /* Sage green heading color */
+    text-align: center; /* Center align heading */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+nav {
+    margin-bottom: 10px; /* Space below navigation */
+    margin-right: 0px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center align navigation links */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px; /* Space between navigation links */
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 1.5rem; /* Navigation link font size */
+    color: #fff; /* White text color for navigation links */
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition for animation */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #51e5a7; /* Sage green bar color */
+    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Section styles */
+section {
+    max-width: 800px; /* Max width for content */
+    margin: 0 auto; /* Center align content */
+    text-align: justify; /* Justify text for readability */
+}
+
+h2 {
+    font-size: 2.5rem; /* Large heading size */
+    color: #87c0a8; /* Sage green heading color */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+p {
+    font-size: 1.2rem; /* Medium paragraph text size */
+    line-height: 1.6; /* Improved readability with line height */
+    margin-bottom: 50px; /* Space below paragraphs */
+    color: #fff; /* White paragraph text color */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: rgb(17, 75, 95);
+    overflow: hidden;
+}
+
+.growing {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    clip-path: inset(-100vh 0);
+}
+
+.growing:before {
+    content: "";
+    display: block;
+    width: 400%;
+    height: 100%;
+    background:
+      /*1*/
+      radial-gradient(farthest-side, #639510 97%, #0000) 12.5% 65%/12px 9px,
+      linear-gradient(#996b52 0 0) 9% 80%/9.4% 9%,
+      linear-gradient(#996b52 0 0) 10% 100%/7% 25%,
+      linear-gradient(#639510 0 0) 12.5% 100%/5px 36%,
+      /*2*/
+      radial-gradient(farthest-side, #639510 97%, #0000) 35.5% 50%/15px 10px,
+      radial-gradient(farthest-side, #639510 97%, #0000) 38% 64%/15px 10px,
+      linear-gradient(#996b52 0 0) 35.5% 80%/9.4% 9%,
+      linear-gradient(#996b52 0 0) 36% 100%/7% 25%,
+      linear-gradient(#639510 0 0) 37% 100%/5px 52%,
+      /*3*/
+      radial-gradient(farthest-side, #fb3e4c 98%, #0000) 64.5% 40.5%/10px 9px,
+      radial-gradient(farthest-side at bottom, #0000 calc(100% - 5px), #639510 0 100%, #0000) 63.6% 34%/20px 10px,
+      radial-gradient(farthest-side, #639510 97%, #0000) 61% 50%/15px 10px,
+      radial-gradient(farthest-side, #639510 97%, #0000) 63.5% 64%/15px 10px,
+      linear-gradient(#996b52 0 0) 63.5% 80%/9.4% 9%,
+      linear-gradient(#996b52 0 0) 63.1% 100%/7% 25%,
+      linear-gradient(#639510 0 0) 62% 100%/5px 62%,
+      /*4*/
+      radial-gradient(farthest-side at 50% 4px, #fb3e4c 98%, #0000) 88.1% 17.5%/17px 13px,
+      radial-gradient(farthest-side, #639510 97%, #0000) 87% 50%/15px 10px,
+      radial-gradient(farthest-side, #639510 97%, #0000) 89.5% 38%/15px 10px,
+      radial-gradient(farthest-side, #639510 97%, #0000) 89.5% 64%/15px 10px,
+      linear-gradient(#996b52 0 0) 91% 80%/9.4% 9%,
+      linear-gradient(#996b52 0 0) 90% 100%/7% 25%,
+      linear-gradient(#639510 0 0) 87.5% 100%/5px 77%;
+    background-repeat: no-repeat;
+    animation: m 4s .5s both;
+}
+
+.growing:after {
+    content: "";
+    position: absolute;
+    inset: -100vh 49px 42px 54px;
+    background:
+      conic-gradient(at 2px 50%, #0000 270deg, #fff 0) 0 0/8px 10px,
+      conic-gradient(at 2px 50%, #0000 270deg, #fff 0) 4px 5px/8px 10px;
+    animation: s 4s .5s both;
+}
+
+@keyframes m {
+    0%, 20% { transform: translate(0%) }
+    33.33%, 53.33% { transform: translate(-24%) }
+    66.66%, 86.66% { transform: translate(-49.5%) }
+    100% { transform: translate(-74.5%) }
+}
+
+@keyframes s {
+    0% { inset: -100vh 49px 100vh 54px }
+    10% { inset: -100vh 49px 42px 54px; opacity: 1 }
+    20% { inset: -100vh 49px 42px 54px; opacity: 0 }
+    20.01%,
+    33.33% { inset: -100vh 49px 100vh 54px; opacity: 1 }
+    43.33% { inset: -100vh 49px 42px 54px; opacity: 1 }
+    53.33% { inset: -100vh 49px 42px 54px; opacity: 0 }
+    53.34%,
+    66.66% { inset: -100vh 49px 100vh 54px; opacity: 1 }
+    76.66% { inset: -100vh 49px 42px 54px; opacity: 1 }
+    86.66%,
+    100% { inset: -100vh 49px 42px 54px; opacity: 0 }
+}
+
+.heart {
+    font-size: 6em;
+    position: relative;
+}
+
+.heartbeat {
+    position: relative;
+    z-index: 1;
+    animation: beat 2s linear infinite;
+}
+
+.heartecho {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: echo 2s linear infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    14% { transform: scale(0.9); }
+    21% { transform: scale(1.1) skew(0.004turn); }
+    28% { transform: scale(1) skew(0.008turn); }
+    35% { transform: scale(1) skew(0); }
+}
+
+@keyframes echo {
+    0% { opacity: 0.5; transform: scale(1); }
+}
+
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.heart {
+  font-size: 6em;
+  position: relative;
+}
+
+.heartbeat {
+  position: relative;
+  z-index: 1;
+  animation: beat 2s linear infinite;
+}
+
+.heartecho {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: echo 2s linear infinite;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(0.9);
+  }
+  21% {
+    transform: scale(1.1) skew(0.004turn)
+  }
+  28% {
+    transform: scale(1) skew(0.008turn);
+  }
+  35% {
+    transform: scale(1) skew(0)
+  }
+}
+
+@keyframes echo {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  14% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  21% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+
+
+
+
+  
+}
